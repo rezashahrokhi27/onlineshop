@@ -8,6 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'price', 'active']
 
 
+
 @admin.register(Comment)
 class Comment(admin.ModelAdmin):
     list_display = ['product', 'author', 'stars', 'active', 'recommend', ]
