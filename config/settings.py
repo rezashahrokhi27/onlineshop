@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
 
     # local apps
+    'cart.apps.CartConfig',
     'accounts',
     'pages',
     'products',
