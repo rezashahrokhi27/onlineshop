@@ -11,6 +11,8 @@
 {% block content %}
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
+    {% trans 'Cart' as header_name %}
+    {% include 'topheader.html' with header_name=header_name %}
         <div class="page-content-inner ptb--80">
             <div class="container">
                 <div class="row">
