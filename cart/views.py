@@ -27,7 +27,7 @@ def add_to_cart(request, product_id):
     return redirect('cart:cart_detail')
 
 
-def remove_from_cart(self, request, product_id):
+def remove_from_cart(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     cart.remove(product)
