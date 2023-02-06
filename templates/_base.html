@@ -123,7 +123,7 @@
                                             <a class="text-right" href="my-account.html">حساب کاربری</a>
                                         </li>
                                         <li>
-                                            <a class="text-right" href="{% url 'cart_detail' %}">سبد خرید</a>
+                                            <a class="text-right" href="{% url 'cart:cart_detail' %}">سبد خرید</a>
                                         </li>
                                         <li>
                                             <a class="text-right" href="wishlist.html">علاقه مندی ها</a>
@@ -271,7 +271,7 @@
                             <span class="ammount">۱۴۸,۰۰۰ تومان</span>
                         </div>
                         <div class="mini-cart__buttons">
-                            <a href="{% url 'cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">مشاهده سبد خرید</a>
+                            <a href="{% url 'cart:cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">مشاهده سبد خرید</a>
                             <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">پرداخت</a>
                         </div>
                     </div>

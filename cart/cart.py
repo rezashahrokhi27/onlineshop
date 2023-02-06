@@ -1,15 +1,15 @@
 from products.models import Product
 
 class Cart:
-    """
-    Initialize the Cart
-    """
     def __init__(self, request):
+        """
+        Initialize the Cart
+        """
         self.request = request
 
         self.session = request.session
 
-        cart = self.session.get['cart']
+        cart = self.session.get('cart')
 
         if not cart:
             cart = self.session['cart'] = {}
@@ -23,9 +23,9 @@ class Cart:
         product_id = str(product.id)
 
         if product_id not in self.cart:
-            self.cart['product_id'] = {'quantity': quantity}
+            self.cart[product_id] = {'quantity': quantity}
         else:
-            self.cart['product_id']['quantity'] += quantity
+            self.cart[product_id]['quantity'] += quantity
 
         self.save()
 
@@ -58,7 +58,7 @@ class Cart:
             yield item
 
     def __len__(self):
-        return len(self.session['cart'])
+        return len(self.cart.keys())
 
     def clear(self):
         del self.session['cart']
