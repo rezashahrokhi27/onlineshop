@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 16:20+0330\n"
-"PO-Revision-Date: 2023-02-06 16:24+0330\n"
+"PO-Revision-Date: 2023-02-06 18:02+0330\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -37,4 +37,4 @@ msgstr "سبد خرید خالی است. لطفا تعدادی کالا به س�
 
 #: .\cart\templates\cart\cart_detail.html:82
 msgid "Go Shoping"
-msgstr "بررو به فروشگاه"
+msgstr "برو به فروشگاه"

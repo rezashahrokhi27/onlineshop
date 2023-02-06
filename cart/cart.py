@@ -42,7 +42,7 @@ class Cart:
 
         if product_id in self.cart:
             del self.cart[product_id]
-            messages.success(self.request, _('Product successfully remove from the cart'))
+            messages.warning(self.request, _('Product successfully remove from the cart'))
         self.save()
 
     def save(self):
@@ -65,7 +65,7 @@ class Cart:
             yield item
 
     def __len__(self):
-        return len(self.cart.keys())
+        return sum(item['quantity'] for item in self.cart.values())
 
     def clear(self):
         del self.session['cart']
