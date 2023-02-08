@@ -14,7 +14,9 @@
                         <div class="mini-cart__product__image">
                             <a href="#">
                                 {% if item.product_obj.image %}
-                                    <img src="{{ item.product_obj.image.url }}" alt="Product Thumnail">
+                                    <a href="{{ item.product_obj.get_absolute_url }}">
+                                        <img src="{{ item.product_obj.image.url }}" alt="Product Thumnail">
+                                    </a>
                                 {% endif %}
                             </a>
                         </div>
