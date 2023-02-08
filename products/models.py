@@ -8,6 +8,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
+    image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover', blank=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
@@ -38,6 +39,7 @@ class Comment(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
     body = models.TextField(verbose_name=_('Comment Text'))
     stars = models.CharField(max_length=10, choices=PRODUCT_STARS, verbose_name=_('Score'))
+
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
