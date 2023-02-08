@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 16:20+0330\n"
-"PO-Revision-Date: 2023-02-06 16:26+0330\n"
+"POT-Creation-Date: 2023-02-08 18:04+0330\n"
+"PO-Revision-Date: 2023-02-08 18:08+0330\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,58 +19,70 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\products\models.py:29
+#: .\models.py:12
+msgid "Product Image"
+msgstr "عکس محصول"
+
+#: .\models.py:31
 msgid "Very Bad"
 msgstr "خیلی بد"
 
-#: .\products\models.py:30
+#: .\models.py:32
 msgid "Bad"
 msgstr "بد"
 
-#: .\products\models.py:31
+#: .\models.py:33
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\products\models.py:32
+#: .\models.py:34
 msgid "Good"
 msgstr "خوب"
 
-#: .\products\models.py:33
+#: .\models.py:35
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\products\models.py:39
+#: .\models.py:41
 msgid "Comment Text"
 msgstr "متن نظر"
 
-#: .\products\models.py:40
+#: .\models.py:42
 msgid "Score"
 msgstr "امتیاز شما به این محصول "
 
-#: .\products\models.py:46
+#: .\models.py:49
 msgid "Recommend"
 msgstr "آیا این محصول را به دیگران پیشنهاد میکنید ؟ "
 
-#: .\products\templates\products\product_detail.html:65
+#: .\templates\products\product_detail.html:58
 msgid "Add to cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\products\templates\products\product_detail.html:86
+#: .\templates\products\product_detail.html:79
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\products\templates\products\product_detail.html:92
+#: .\templates\products\product_detail.html:85
 msgid "Comments"
 msgstr "نظرات"
 
-#: .\products\templates\products\product_detail.html:161
+#: .\templates\products\product_detail.html:155
 msgid "Write Your Comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\products\templates\products\product_detail.html:166
+#: .\templates\products\product_detail.html:160
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\products\views.py:42
+#: .\templates\products\product_detail.html:163
+msgid "To write comment please "
+msgstr "برای ثبت دیدگاه لطفا وارد شوید"
+
+#: .\templates\products\product_detail.html:164
+msgid "Login"
+msgstr "ورود به سایت"
+
+#: .\views.py:42
 msgid "Your comment has been added successfully."
 msgstr "نظر شما با موفقیت اضافه شد."
