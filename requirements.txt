@@ -10,10 +10,12 @@ Django==4.0.2
 django-allauth==0.52.0
 django-cache-url==3.4.4
 django-crispy-forms==1.14.0
+django-jalali-date==1.0.1
 django-jazzmin==2.6.0
 django-rosetta==0.9.8
 environs==9.5.0
 idna==3.4
+jdatetime==4.1.0
 marshmallow==3.19.0
 oauthlib==3.2.2
 packaging==23.0

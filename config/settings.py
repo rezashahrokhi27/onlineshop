@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party apps
+    'jalali_date',
     'rosetta',
     'crispy_forms',
     'allauth',
