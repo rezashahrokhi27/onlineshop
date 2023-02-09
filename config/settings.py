@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # third party apps
     'jalali_date',
@@ -49,12 +50,14 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'ckeditor',
 
     # local apps
     'cart.apps.CartConfig',
     'accounts',
     'pages',
     'products',
+    'persian_translate',
 ]
 
 MIDDLEWARE = [
@@ -159,6 +162,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 # Media
 MEDIA_URL = '/media/'

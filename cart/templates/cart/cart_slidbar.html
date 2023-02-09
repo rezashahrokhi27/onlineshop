@@ -1,5 +1,7 @@
 {% load i18n %}
 {% load static %}
+{% load humanize %}
+{% load persian_translation_tags %}
 
 <!-- Mini Cart Start -->
     <aside class="mini-cart" id="miniCart">
@@ -28,7 +30,7 @@
                                 </a>
                             </span>
                             <span class="mini-cart__product__quantity">
-                                <span>{{item.product_obj.price}} تومان</span> &#215; <span>{{item.quantity}}</span>
+                                <span>{{item.product_obj.price|intcomma:False|translate_number}} {% trans '$' %}</span> &#215; <span>{{item.quantity}}</span>
                             </span>
                         </div>
                     </li>
@@ -37,7 +39,7 @@
 
                 <div class="mini-cart__total">
                     <span>{% trans 'Total' %}</span>
-                    <span class="ammount">{{cart.get_total}} تومان</span>
+                    <span class="ammount">{{cart.get_total|intcomma:False|translate_number}} {% trans '$' %}</span>
                 </div>
                 <div class="mini-cart__buttons">
                     <a href="{% url 'cart:cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">{% trans 'cart' %}</a>
