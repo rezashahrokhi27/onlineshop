@@ -15,7 +15,7 @@ def order_create_view(request):
 
     if len(cart) == 0:
         messages.warning(request, _('Your cart is empty.'))
-        redirect('product_list')
+        return redirect('product_list')
 
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
