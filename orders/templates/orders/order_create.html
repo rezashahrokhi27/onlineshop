@@ -29,46 +29,47 @@
                             <h2>جزئیات سفارش</h2>
                         </div>
                         <div class="checkout-form">
-                            <form action="">
-                                {% csrf_token %}
-                                {{ form|crispy }}
-                            </form>
-{#                            <form action="#" class="form form--checkout">#}
-{#                                <div class="form-row mb--20">#}
-{#                                    <div class="form__group col-md-6 mb-sm--30">#}
-{#                                        <label for="billing_fname" class="form__label form__label--2">نام  <span class="required">*</span></label>#}
-{#                                        <input type="text" name="billing_fname" id="billing_fname" class="form__input form__input--2">#}
-{#                                    </div>#}
-{#                                    <div class="form__group col-md-6">#}
-{#                                        <label for="billing_lname" class="form__label form__label--2">نام خانوادگی  <span class="required">*</span></label>#}
-{#                                        <input type="text" name="billing_lname" id="billing_lname" class="form__input form__input--2">#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="form-row mb--20">#}
-{#                                    <div class="form__group col-12">#}
-{#                                        <label for="billing_company" class="form__label form__label--2">آدرس</label>#}
-{#                                        <input type="text" name="billing_company" id="billing_company" class="form__input form__input--2">#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="form-row mb--20">#}
-{#                                    <div class="form__group col-12">#}
-{#                                        <label for="billing_phone" class="form__label form__label--2">شماره همراه <span class="required">*</span></label>#}
-{#                                        <input type="text" name="billing_phone" id="billing_phone" class="form__input form__input--2">#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="form-row mb--20">#}
-{#                                    <div class="form__group col-12">#}
-{#                                        <label for="billing_email" class="form__label form__label--2">ایمیل  <span class="required">*</span></label>#}
-{#                                        <input type="email" name="billing_email" id="billing_email" class="form__input form__input--2">#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="form-row">#}
-{#                                    <div class="form__group col-12">#}
-{#                                        <label for="orderNotes" class="form__label form__label--2">یادداشت شما</label>#}
-{#                                        <textarea class="form__input form__input--2 form__input--textarea" id="orderNotes" name="orderNotes" placeholder="اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی بگذارید"></textarea>#}
-{#                                    </div>#}
-{#                                </div>#}
+{#                            <form action="" method="">#}
+{#                                {% csrf_token %}#}
+{#                                {{ form|crispy }}#}
 {#                            </form>#}
+                            {% if form.errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.errors }}
+                                </div>
+                            {% endif %}
+                            <form action="" class="form form--checkout" method="POST">
+                                {% csrf_token %}
+                                <div class="form-row mb--20">
+                                    <div class="form__group col-md-6 mb-sm--30">
+                                        <label for="billing_fname" class="form__label form__label--2">نام  <span class="required">*</span></label>
+                                        <input type="text" name="{{ form.first_name.name }}" id="billing_fname" class="form__input form__input--2">
+                                    </div>
+                                    <div class="form__group col-md-6">
+                                        <label for="billing_lname" class="form__label form__label--2">نام خانوادگی  <span class="required">*</span></label>
+                                        <input type="text" name="{{ form.last_name.name }}" id="billing_lname" class="form__input form__input--2">
+                                    </div>
+                                </div>
+                                <div class="form-row mb--20">
+                                    <div class="form__group col-12">
+                                        <label for="billing_address" class="form__label form__label--2">آدرس</label>
+                                        <input type="text" name="{{ form.address.name }}" id="billing_address" class="form__input form__input--2">
+                                    </div>
+                                </div>
+                                <div class="form-row mb--20">
+                                    <div class="form__group col-12">
+                                        <label for="billing_phone" class="form__label form__label--2">شماره همراه <span class="required">*</span></label>
+                                        <input type="text" name="{{ form.phone_number.name }}" id="billing_phone" class="form__input form__input--2">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form__group col-12">
+                                        <label for="orderNotes" class="form__label form__label--2">یادداشت شما</label>
+                                        <textarea class="form__input form__input--2 form__input--textarea" id="orderNotes" name="{{ form.order_notes.name }}" placeholder="اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی بگذارید"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn">{% trans 'Submit' %}</button>
+                            </form>
                         </div>
                     </div>
                     <div class="col-xl-5 offset-xl-1 col-lg-6 mt-md--40">
