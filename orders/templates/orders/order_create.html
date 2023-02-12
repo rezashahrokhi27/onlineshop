@@ -77,27 +77,26 @@
                                     <thead>
                                         <tr>
                                             <th>محصول</th>
+                                            <th class="text-right">قیمت</th>
                                             <th class="text-right">قیمت نهایی</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    {% for item in cart %}
                                         <tr>
-                                            <th>محصول شماره یک
-                                                <strong><span>&#10005;</span>۲</strong>
+                                            <th>{{ item.product_obj.title}}
+                                                <strong><span>&#10005;</span> {{item.quantity|translate_number}}</strong>
                                             </th>
-                                            <td class="text-right">۲۹۶,۰۰۰ تومان</td>
+                                            <td class="text-right">{{ item.product_obj.price|intcomma:False|translate_number }} {% trans '$' %}</td>
+                                            <td class="text-right">{{ item.total_price|intcomma:False|translate_number }} {% trans '$' %}</td>
                                         </tr>
-                                        <tr>
-                                            <th>محصول شماره دو
-                                                <strong><span>&#10005;</span>۱</strong>
-                                            </th>
-                                            <td class="text-right">۵۸,۰۰۰ تومان</td>
-                                        </tr>
+                                    {% endfor %}
                                     </tbody>
                                     <tfoot>
                                         <tr class="cart-subtotal">
-                                            <th>مجموع</th>
-                                            <td class="text-right">۳۴۸,۰۰۰ تومان</td>
+                                            <th>{% trans 'Total' %}</th>
+                                            <td class="text-right"></td>
+                                            <td class="text-right">{{ cart.get_total|intcomma:False|translate_number }} {% trans '$' %}</td>
                                         </tr>
                                     </tfoot>
                                 </table>

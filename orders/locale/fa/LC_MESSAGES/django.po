@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-12 20:49+0330\n"
-"PO-Revision-Date: 2023-02-12 20:50+0330\n"
+"POT-Creation-Date: 2023-02-12 21:08+0330\n"
+"PO-Revision-Date: 2023-02-12 21:08+0330\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -22,3 +22,12 @@ msgstr ""
 #: .\templates\orders\order_create.html:19
 msgid "Order"
 msgstr "ثبت سفارش"
+
+#: .\templates\orders\order_create.html:89
+#: .\templates\orders\order_create.html:96
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\orders\order_create.html:95
+msgid "Total"
+msgstr "مجموع"
