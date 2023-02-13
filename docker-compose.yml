@@ -12,7 +12,8 @@ services:
       - db
     environment:
       - "DJANGO_SECRET_KEY=django-insecure-b764$$#(&o4o((cvy!z^nsseq5@erq#e^0%5r5a(%c24*f^*sde"
-      - "DJANGO_DEBUG=True" 
+      - "DJANGO_DEBUG=True"
+      - "DJANGO_ZARINPAL_MERCHANT_ID=${DOCKER_COMPOSE_DJANGO_ZARINPAL_MERCHANT_ID}"
 
   db:
     image: postgres:14
