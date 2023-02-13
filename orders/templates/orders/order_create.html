@@ -41,14 +41,28 @@
                             <form action="" class="form form--checkout" method="POST">
                                 {% csrf_token %}
                                 <div class="form-row mb--20">
-                                    <div class="form__group col-md-6 mb-sm--30">
-                                        <label for="billing_fname" class="form__label form__label--2">نام  <span class="required">*</span></label>
-                                        <input type="text" name="{{ form.first_name.name }}" id="billing_fname" class="form__input form__input--2">
-                                    </div>
-                                    <div class="form__group col-md-6">
-                                        <label for="billing_lname" class="form__label form__label--2">نام خانوادگی  <span class="required">*</span></label>
-                                        <input type="text" name="{{ form.last_name.name }}" id="billing_lname" class="form__input form__input--2">
-                                    </div>
+                                    {% if user.first_name %}
+                                        <div class="form__group col-md-6 mb-sm--30">
+                                            <label for="billing_fname" class="form__label form__label--2">نام  <span class="required">*</span></label>
+                                            <input type="text" name="{{ form.first_name.name }}" id="billing_fname" class="form__input form__input--2" value="{{ instance.first_name }}">
+                                        </div>
+                                    {% else %}
+                                        <div class="form__group col-md-6 mb-sm--30">
+                                            <label for="billing_fname" class="form__label form__label--2">نام  <span class="required">*</span></label>
+                                            <input type="text" name="{{ form.first_name.name }}" id="billing_fname" class="form__input form__input--2">
+                                        </div>
+                                    {% endif %}
+                                        {% if user.last_name %}
+                                            <div class="form__group col-md-6">
+                                                <label for="billing_lname" class="form__label form__label--2">نام خانوادگی  <span class="required">*</span></label>
+                                                <input type="text" name="{{ form.last_name.name }}" id="billing_lname" class="form__input form__input--2" value="{{ instance.last_name }}">
+                                            </div>
+                                        {% else %}
+                                            <div class="form__group col-md-6">
+                                                <label for="billing_lname" class="form__label form__label--2">نام خانوادگی  <span class="required">*</span></label>
+                                                <input type="text" name="{{ form.last_name.name }}" id="billing_lname" class="form__input form__input--2">
+                                            </div>
+                                        {% endif %}
                                 </div>
                                 <div class="form-row mb--20">
                                     <div class="form__group col-12">
